@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Prediction Results</h2>
+    
+    <div class="result-card {% if prediction == 1 %}high-impact{% else %}low-impact{% endif %}">
+        <h3>Predicted Impact: {% if prediction == 1 %}High{% else %}Low{% endif %}</h3>
+        <p>Probability: {{ "%.2f"|format(probability * 100) }}%</p>
+    </div>
+    
+    <div class="map-container">
+        {{ map_html|safe }}
+    </div>
+    
+    <a href="/predict" class="btn">Make Another Prediction</a>
+</div>
+{% endblock %}

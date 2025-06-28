@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Landslide Impact Prediction</h2>
+    
+    {% if error %}
+        <div class="alert error">{{ error }}</div>
+    {% endif %}
+    
+    <form action="/predict" method="POST">
+        <div class="form-group">
+            <label for="latitude">Latitude:</label>
+            <input type="number" step="any" id="latitude" name="latitude" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="longitude">Longitude:</label>
+            <input type="number" step="any" id="longitude" name="longitude" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="landslide_size">Landslide Size:</label>
+            <select id="landslide_size" name="landslide_size" required>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+                <option value="unknown">Unknown</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="landslide_trigger">Trigger:</label>
+            <select id="landslide_trigger" name="landslide_trigger" required>
+                <option value="rain">Rain</option>
+                <option value="earthquake">Earthquake</option>
+                <option value="volcanic_activity">Volcanic Activity</option>
+                <option value="unknown">Unknown</option>
+            </select>
+        </div>
+        
+        <button type="submit" class="btn">Predict Impact</button>
+    </form>
+</div>
+{% endblock %}

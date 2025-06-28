@@ -1,0 +1,25 @@
+1{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Welcome to the Landslide Detection System</h2>
+    <p>This system predicts the potential impact severity of landslide events based on location and environmental factors.</p>
+    
+    <div class="features">
+        <div class="feature">
+            <h3>Real-time Prediction</h3>
+            <p>Get instant predictions about landslide impact severity.</p>
+        </div>
+        <div class="feature">
+            <h3>Global Data</h3>
+            <p>Powered by the Global Landslide Catalog dataset.</p>
+        </div>
+        <div class="feature">
+            <h3>Interactive Maps</h3>
+            <p>Visualize predictions on an interactive map.</p>
+        </div>
+    </div>
+    
+    <a href="/predict" class="btn">Try Prediction</a>
+</div>
+{% endblock %}
